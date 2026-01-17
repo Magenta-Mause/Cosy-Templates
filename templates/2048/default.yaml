@@ -1,0 +1,13 @@
+# templates/2048/default.yaml
+name: '2048'
+description: Browser-based 2048 puzzle game server
+variables: []
+game_id: 2048
+docker_image_name: alexwhen/docker-2048
+docker_image_tag: latest
+docker_execution_command: null
+environment_variables: {}
+port_mapping:
+  '8080/tcp': 80
+file_mounts: []
+file_downloads: []

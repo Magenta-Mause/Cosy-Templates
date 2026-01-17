@@ -17,11 +17,11 @@ templates/minecraft/fabric.yaml
 
 ## Available Templates
 
-| Game      | Templates               | Docker Image          |
-| :-------- | :---------------------- | :-------------------- |
-| Minecraft | fabric.yaml | itzg/minecraft-server |
-
-<!-- Auto-generate this table or add manually as templates grow -->
+| Game                 | Templates               | Docker Image         |
+|:---------------------| :---------------------- |:---------------------|
+| Minecraft            | fabric.yaml | itzg/minecraft-server |
+| Ark Survival Evolved | default.yaml | hermsi/ark-server    |
+| 2048                 | default.yaml | alexwhen/docker-2048 |
 
 ## Template Format
 
@@ -50,8 +50,8 @@ Cosy is relying on the SteamGridDb API to resolve game information as this was t
 ## Contributing
 
 - Add new templates: [CONTRIBUTING.md](CONTRIBUTING.md)
-- Request games: [New template issue](https://github.com/%7Byour-org%7D/%7Brepo%7D/issues/new?template=template-request.yaml)
-- Report bugs: [Bug report issue](https://github.com/%7Byour-org%7D/%7Brepo%7D/issues/new?template=bug-report.yaml)
+- Request games: [New template issue](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=01-template-request.yaml)
+- Report bugs: [Bug report issue](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=02-bug-report.yaml)
 
 
 ## Validation
@@ -75,8 +75,8 @@ MIT - see [LICENSE](LICENSE)
 
 ***
 
-⭐ Found a bug? [[Report it →]](https://github.com/magenta-mause/cosy-templates/issues/new?template=bug-report.yaml)
-🚀 Want a new game? [[Request it →]](https://github.com/magenta-mause/cosy-templates/issues/new?template=template-request.yaml)
+⭐ Found a bug? [[Report it →]](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=02-bug-report.yaml)
+🚀 Want a new game? [[Request it →]](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=01-template-request.yaml)
 
 ***
 

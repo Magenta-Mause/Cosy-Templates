@@ -3,78 +3,6 @@
   "$id": "https://github.com/Magenta-Mause/Cosy-Templates/schema/template.schema.json",
   "title": "Game Server Template",
   "description": "Schema for game server deployment templates",
-  "type": "object",
-  "required": [
-    "name",
-    "description",
-    "game_id",
-    "docker_image_name",
-    "docker_image_tag"
-  ],
-  "additionalProperties": false,
-  "properties": {
-    "name": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 100,
-      "description": "Human-readable name of the server template"
-    },
-    "description": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 500,
-      "description": "Brief description of what this template provides"
-    },
-    "variables": {
-      "type": "array",
-      "description": "User-configurable variables for the template",
-      "items": {
-        "$ref": "#/$defs/Variable"
-      }
-    },
-    "game_id": {
-      "type": "integer",
-      "description": "SteamGridDb GameId for the game"
-    },
-    "docker_image_name": {
-      "type": "string",
-      "pattern": "^[a-z0-9]+([._-][a-z0-9]+)*(/[a-z0-9]+([._-][a-z0-9]+)*)*$",
-      "description": "Docker image name (e.g., 'itzg/minecraft-server')"
-    },
-    "docker_image_tag": {
-      "type": "string",
-      "minLength": 1,
-      "description": "Docker image tag (e.g., 'latest', '1.20.1')"
-    },
-    "docker_execution_command": {
-      "type": ["string", "null"],
-      "description": "Custom command to execute in the container (null for default)"
-    },
-    "environment_variables": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string"
-      },
-      "description": "Environment variables passed to the container. Use {{variable}} for template substitution"
-    },
-    "port_mapping": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "integer",
-        "minimum": 1,
-        "maximum": 65535
-      },
-      "description": "Port mappings as 'host_port': container_port"
-    },
-    "file_mounts": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "pattern": "^/.*$"
-      },
-      "description": "Paths inside the container to mount as persistent volumes"
-    }
-  },
   "$defs": {
     "Variable": {
       "type": "object",
@@ -118,6 +46,102 @@
         }
       }
     }
+  },
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "game_id",
+    "docker_image_name",
+    "docker_image_tag"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "Human-readable name of the server template"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Brief description of what this template provides"
+    },
+    "variables": {
+      "type": "array",
+      "description": "User-configurable variables for the template",
+      "items": {
+        "$ref": "#/$defs/Variable"
+      }
+    },
+    "game_id": {
+      "type": "number",
+      "description": "Unique game identifier (SteamGridDB ID or slug)"
+    },
+    "docker_image_name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+([._-][a-z0-9]+)*(/[a-z0-9]+([._-][a-z0-9]+)*)*$",
+      "description": "Docker image name (e.g., 'itzg/minecraft-server')"
+    },
+    "docker_image_tag": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Docker image tag (e.g., 'latest', '1.20.1')"
+    },
+    "docker_execution_command": {
+      "type": ["string", "null"],
+      "description": "Custom command to execute in the container (null for default)"
+    },
+    "environment_variables": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Environment variables passed to the container. Use {{variable}} for template substitution"
+    },
+    "port_mapping": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+          },
+          {
+            "type": "string",
+            "enum": ["tcp", "udp"]
+          }
+        ]
+      },
+      "description": "Port mappings as 'host_port': container_port or 'host_port/protocol': container_port"
+    },
+    "file_mounts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/.*$"
+      },
+      "description": "Paths inside the container to mount as persistent volumes"
+    },
+    "file_downloads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["local_path", "web_path"],
+        "properties": {
+          "local_path": {
+            "type": "string",
+            "pattern": "^/.*$"
+          },
+          "web_path": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
   }
 }
-

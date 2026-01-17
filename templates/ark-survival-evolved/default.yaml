@@ -1,0 +1,47 @@
+# templates/ark-survival-evolved/default.yaml
+name: ARK Survival Evolved
+description: ARK - Survival Evolved dedicated server with automatic backups and updates
+variables:
+  - name: Session Name
+    type: string
+    placeholder: session_name
+  - name: Server Map
+    type: string
+    placeholder: server_map
+    default: TheIsland
+  - name: Server Password
+    type: string
+    placeholder: server_password
+  - name: Admin Password
+    type: string
+    placeholder: admin_password
+  - name: Max Players
+    type: string
+    placeholder: max_players
+    default: "10"
+  - name: Update On Start
+    type: boolean
+    placeholder: update_on_start
+    default: true
+  - name: Backup On Stop
+    type: boolean
+    placeholder: backup_on_stop
+    default: true
+game_id: 6511
+docker_image_name: hermsi/ark-server
+docker_image_tag: latest
+environment_variables:
+  UPDATE_ON_START: '{{update_on_start}}'
+  BACKUP_ON_STOP: '{{backup_on_stop}}'
+  PRE_UPDATE_BACKUP: 'true'
+  WARN_ON_STOP: 'true'
+port_mapping:
+  '7777/udp': 7777      # Game client connections
+  '7778/udp': 7778      # Raw UDP socket
+  '27020/tcp': 27020    # RCON management
+  '27015/udp': 27015    # Steam server list
+file_mounts:
+  - /app                # Server data
+  - /home/steam/ARK-Backups  # Backups
+file_downloads: []
+
