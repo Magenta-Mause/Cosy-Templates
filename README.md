@@ -19,7 +19,7 @@ templates/minecraft/fabric.yaml
 
 | Game      | Templates               | Docker Image          |
 | :-------- | :---------------------- | :-------------------- |
-| Minecraft | fabric.yaml, paper.yaml | itzg/minecraft-server |
+| Minecraft | fabric.yaml | itzg/minecraft-server |
 
 <!-- Auto-generate this table or add manually as templates grow -->
 
@@ -35,13 +35,17 @@ variables:
     type: string
     regex: \d\.\d+\.\d
     placeholder: version
-game_id: '[game_id]'
+game_id: '[steam_grid_db_game_id]' # This id comes from the https://www.steamgriddb.com/
 docker_image_name: itzg/minecraft-server
 docker_image_tag: latest
 # ... port_mapping, environment_variables, etc.
 ```
 
 **Full schema**: [schema/template.schema.json](schema/template.schema.json)
+
+## Why www.steamgriddb.com? 
+
+Cosy is relying on the SteamGridDb API to resolve game information as this was the best and easiest to access API.
 
 ## Contributing
 

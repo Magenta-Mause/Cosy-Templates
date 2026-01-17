@@ -34,7 +34,7 @@
     },
     "game_id": {
       "type": "integer",
-      "description": "Unique identifier for the game (use '[game_id]' as placeholder)"
+      "description": "SteamGridDb GameId for the game"
     },
     "docker_image_name": {
       "type": "string",
