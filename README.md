@@ -1,3 +1,11 @@
+<p align="center">
+    <a href="https://stratssync.com">
+        <picture>
+          <img src="https://raw.githubusercontent.com/Magenta-Mause/Cosy-Templates/refs/heads/main/assets/logo.gif" width="400"  alt="Cosy"/>
+        </picture>
+    </a>
+</p>
+
 # Game Server Template Collection
 
 A collection of validated Docker-based game server templates for easy deployment.
@@ -14,14 +22,13 @@ A collection of validated Docker-based game server templates for easy deployment
 templates/minecraft/fabric.yaml
 ```
 
-
 ## Available Templates
 
-| Game                 | Templates               | Docker Image         |
-|:---------------------| :---------------------- |:---------------------|
-| Minecraft            | fabric.yaml | itzg/minecraft-server |
-| Ark Survival Evolved | default.yaml | hermsi/ark-server    |
-| 2048                 | default.yaml | alexwhen/docker-2048 |
+| Game                 | Templates    | Docker Image          |
+|:---------------------|:-------------|:----------------------|
+| Minecraft            | fabric.yaml  | itzg/minecraft-server |
+| Ark Survival Evolved | default.yaml | hermsi/ark-server     |
+| 2048                 | default.yaml | alexwhen/docker-2048  |
 
 ## Template Format
 
@@ -43,16 +50,17 @@ docker_image_tag: latest
 
 **Full schema**: [schema/template.schema.json](schema/template.schema.json)
 
-## Why www.steamgriddb.com? 
+## Why www.steamgriddb.com?
 
 Cosy is relying on the SteamGridDb API to resolve game information as this was the best and easiest to access API.
 
 ## Contributing
 
 - Add new templates: [CONTRIBUTING.md](CONTRIBUTING.md)
-- Request games: [New template issue](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=01-template-request.yaml)
-- Report bugs: [Bug report issue](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=02-bug-report.yaml)
-
+- Request
+  games: [New template issue](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=01-template-request.yaml)
+- Report
+  bugs: [Bug report issue](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=02-bug-report.yaml)
 
 ## Validation
 
@@ -76,7 +84,8 @@ MIT - see [LICENSE](LICENSE)
 ***
 
 ⭐ Found a bug? [[Report it →]](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=02-bug-report.yaml)
-🚀 Want a new game? [[Request it →]](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=01-template-request.yaml)
+🚀 Want a new
+game? [[Request it →]](https://github.com/Magenta-Mause/Cosy-Templates/issues/new?template=01-template-request.yaml)
 
 ***
 
