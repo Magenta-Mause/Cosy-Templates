@@ -3,15 +3,12 @@ description: Report issues with existing templates
 title: "[BUG] templates/{game}/{template} - Short description"
 labels: ["bug", "needs-triage"]
 body:
-  - type: dropdown
+  - type: input
     id: template
     attributes:
       label: Affected template
       description: Path to the broken template
-      options:
-        - templates/minecraft/fabric.yaml
-        - templates/minecraft/paper.yaml
-        - Other (specify path below)
+      placeholder: /templates/minecraft/fabric.yaml
 
   - type: textarea
     id: what-happened
