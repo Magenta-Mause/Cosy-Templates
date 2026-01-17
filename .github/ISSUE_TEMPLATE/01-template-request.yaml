@@ -15,7 +15,6 @@ body:
     attributes:
       label: Game name
       description: Exact name of the game/modpack
-      required: true  # ❌ Remove this - not supported
       options:
         - Minecraft (Vanilla/Fabric/Paper)
         - Valheim
@@ -30,7 +29,7 @@ body:
       placeholder: e.g. "itzg/terraria-server exists..."
       render: shell
     validations:
-      required: true  # ✅ OK here
+      required: true
 
   - type: checkboxes
     id: searched
