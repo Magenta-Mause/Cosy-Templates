@@ -1,0 +1,46 @@
+name: "🆕 Template Request"
+description: Request a new game server template
+title: "[TEMPLATE] Game Name - Short description"
+labels: ["template-request", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Before submitting
+        - Search existing templates
+        - Check if a Docker image exists for this game
+ 
+  - type: dropdown
+    id: game
+    attributes:
+      label: Game name
+      description: Exact name of the game/modpack
+      required: true
+      options:
+        - Minecraft (Vanilla/Fabric/Paper)
+        - Valheim
+        - Counter-Strike 2
+        - Other (specify below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Why this template?
+      description: What Docker image? What makes it unique? Link to docs/image.
+      placeholder: e.g. "itzg/terraria-server exists..."
+      render: shell
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: searched
+    attributes:
+      label: I have checked
+      options:
+        - label: "No existing template for this game"
+        - label: "Docker image is ready/available"
+        validations:
+          required: true
+

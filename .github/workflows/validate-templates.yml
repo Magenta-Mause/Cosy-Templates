@@ -1,0 +1,15 @@
+# .github/workflows/validate-templates.yml
+name: Validate Templates
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate YAML templates
+        uses: cardinalby/schema-validation-action@v3
+        with:
+          file: 'templates/**/*.yaml'
+          schema: 'schema/template.schema.json'
+

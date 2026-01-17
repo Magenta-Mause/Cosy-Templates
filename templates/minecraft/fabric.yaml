@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft Fabric
+description: Minecraft Fabric Server with default fabric installation
+variables:
+  - name: Minecraft Version
+    type: string
+    regex: \d\.\d+\.\d
+    placeholder: version
+game_id: 38365
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+docker_execution_command: null
+environment_variables:
+  version: '{{version}}'
+  EULA: 'true'
+port_mapping:
+  '6432': 6432
+file_mounts:
+  - /data
+
