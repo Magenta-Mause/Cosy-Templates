@@ -34,6 +34,7 @@ Templates must pass the schema. Install a validator:
 # npm
 npm install -g validate-yaml
 validate-yaml --schema=schema/template.schema.json templates/minecraft/fabric.yaml
+```
 
 # Or use VS Code with yaml-language-server
 
