@@ -8,7 +8,6 @@ body:
     attributes:
       label: Affected template
       description: Path to the broken template
-      required: true
       options:
         - templates/minecraft/fabric.yaml
         - templates/minecraft/paper.yaml
