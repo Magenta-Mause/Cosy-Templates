@@ -9,7 +9,7 @@ body:
         ## Before submitting
         - Search existing templates
         - Check if a Docker image exists for this game
- 
+
   - type: dropdown
     id: game
     attributes:
@@ -41,6 +41,5 @@ body:
       options:
         - label: "No existing template for this game"
         - label: "Docker image is ready/available"
-        validations:
-          required: true
-
+    validations:
+      required: true
