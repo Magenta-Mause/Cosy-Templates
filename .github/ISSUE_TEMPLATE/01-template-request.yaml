@@ -10,16 +10,12 @@ body:
         - Search existing templates
         - Check if a Docker image exists for this game
 
-  - type: dropdown
+  - type: input
     id: game
     attributes:
       label: Game name
       description: Exact name of the game/modpack
-      options:
-        - Minecraft (Vanilla/Fabric/Paper)
-        - Valheim
-        - Counter-Strike 2
-        - Other (specify below)
+      placeholder: Minecraft
 
   - type: textarea
     id: details
