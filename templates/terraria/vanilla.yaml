@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
 name: Terraria Vanilla
 description: Official Terraria vanilla server (build from source or ghcr.io/meshi-team/terraria-server-vanilla)
 variables:

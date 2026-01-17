@@ -1,4 +1,4 @@
-# templates/2048/vanilla.yaml
+# yaml-language-server: $schema=../../schema/template.schema.json
 name: '2048'
 description: Browser-based 2048 puzzle game server
 variables: []
@@ -8,6 +8,6 @@ docker_image_tag: latest
 docker_execution_command: null
 environment_variables: {}
 port_mapping:
-  '8080/tcp': 80
+  '8080/tcp': 8080
 file_mounts: []
 file_downloads: []

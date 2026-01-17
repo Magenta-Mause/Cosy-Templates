@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
 name: Terraria TShock
 description: Terraria server with TShock mod/plugin support
 variables:

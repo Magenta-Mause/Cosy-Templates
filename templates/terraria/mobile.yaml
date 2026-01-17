@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
 name: Terraria Mobile
 description: Terraria mobile-compatible server (ghcr.io/meshi-team/terraria-server-mobile)
 variables:
