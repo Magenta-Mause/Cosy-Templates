@@ -15,14 +15,12 @@ body:
     attributes:
       label: Game name
       description: Exact name of the game/modpack
-      required: true
+      required: true  # ❌ Remove this - not supported
       options:
         - Minecraft (Vanilla/Fabric/Paper)
         - Valheim
         - Counter-Strike 2
         - Other (specify below)
-    validations:
-      required: true
 
   - type: textarea
     id: details
@@ -32,7 +30,7 @@ body:
       placeholder: e.g. "itzg/terraria-server exists..."
       render: shell
     validations:
-      required: true
+      required: true  # ✅ OK here
 
   - type: checkboxes
     id: searched
@@ -41,5 +39,4 @@ body:
       options:
         - label: "No existing template for this game"
         - label: "Docker image is ready/available"
-    validations:
-      required: true
+      # ✅ No validations - not supported
