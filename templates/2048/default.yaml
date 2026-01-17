@@ -1,4 +1,4 @@
-# templates/2048/default.yaml
+# templates/2048/vanilla.yaml
 name: '2048'
 description: Browser-based 2048 puzzle game server
 variables: []

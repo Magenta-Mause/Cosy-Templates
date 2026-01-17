@@ -1,4 +1,4 @@
-# templates/ark-survival-evolved/default.yaml
+# templates/ark-survival-evolved/vanilla.yaml
 name: ARK Survival Evolved
 description: ARK - Survival Evolved dedicated server with automatic backups and updates
 variables:

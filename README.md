@@ -22,14 +22,6 @@ A collection of validated Docker-based game server templates for easy deployment
 templates/minecraft/fabric.yaml
 ```
 
-## Available Templates
-
-| Game                 | Templates    | Docker Image          |
-|:---------------------|:-------------|:----------------------|
-| Minecraft            | fabric.yaml  | itzg/minecraft-server |
-| Ark Survival Evolved | default.yaml | hermsi/ark-server     |
-| 2048                 | default.yaml | alexwhen/docker-2048  |
-
 ## Template Format
 
 Every template follows this structure:

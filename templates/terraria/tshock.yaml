@@ -1,0 +1,20 @@
+name: Terraria TShock
+description: Terraria server with TShock mod/plugin support
+variables:
+  - name: World Path
+    type: string
+    placeholder: world_path
+    default: /worlds/my_world.wld
+game_id: 1226
+docker_image_name: ghcr.io/pryaxis/tshock
+docker_image_tag: latest
+docker_execution_command: '-world {{world_path}}'
+environment_variables: {}
+port_mapping:
+  '7777/tcp': 7777
+  '7878/tcp': 7878
+file_mounts:
+  - /tshock
+  - /worlds
+  - /plugins
+  - /etc/localtime:ro
