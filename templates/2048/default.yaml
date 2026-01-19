@@ -5,7 +5,6 @@ variables: []
 game_id: 2048
 docker_image_name: alexwhen/docker-2048
 docker_image_tag: latest
-docker_execution_command: null
 environment_variables: {}
 port_mapping:
   '8080/tcp': 8080
