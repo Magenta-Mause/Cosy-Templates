@@ -109,8 +109,11 @@
       "description": "Docker image tag (e.g., 'latest', '1.20.1')"
     },
     "docker_execution_command": {
-      "type": ["string", "null"],
-      "description": "Custom command to execute in the container (null for default)"
+      "type": ["array", "null"],
+      "items": {
+        "type": "string"
+      },
+      "description": "Custom command to execute in the container (e.g. ['npm', 'run', 'dev']). Null for default."
     },
     "environment_variables": {
       "type": "object",
