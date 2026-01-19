@@ -38,3 +38,6 @@ port_mapping:
   '7777/udp': 7777
 file_mounts:
   - /terraria-server/worlds
+resource_limit:
+  memory: 2G
+  cpu: 1

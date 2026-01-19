@@ -19,3 +19,6 @@ file_mounts:
   - /worlds
   - /plugins
   - /etc/localtime:ro
+resource_limit:
+  memory: 2G
+  cpu: 1

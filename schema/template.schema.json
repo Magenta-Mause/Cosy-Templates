@@ -45,6 +45,24 @@
           "description": "Whether this variable must be provided"
         }
       }
+    },
+    "ResourceLimit": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "memory": {
+          "type": "string",
+          "pattern": "^[0-9]+(\\.[0-9]+)?(B|K|M|G|T|KB|MB|GB|TB)?$",
+          "description": "Memory limit (e.g., '128M', '1G', '512MB')"
+        },
+        "cpu": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 128,
+          "description": "CPU limit in cores (e.g., 0.5 = half core, 2 = two cores)"
+        }
+      },
+      "description": "Container resource limits"
     }
   },
   "type": "object",
@@ -142,6 +160,10 @@
           }
         }
       }
+    },
+    "resource_limit": {
+      "$ref": "#/$defs/ResourceLimit",
+      "description": "Optional CPU and memory limits for the container"
     }
   }
 }

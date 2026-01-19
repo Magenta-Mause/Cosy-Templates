@@ -11,3 +11,6 @@ port_mapping:
   '8080/tcp': 8080
 file_mounts: []
 file_downloads: []
+resource_limit:
+  memory: 128M
+  cpu: 0.5

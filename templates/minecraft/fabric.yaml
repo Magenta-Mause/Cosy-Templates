@@ -17,4 +17,6 @@ port_mapping:
   '6432/tcp': 6432
 file_mounts:
   - /data
-
+resource_limit:
+  memory: 6G
+  cpu: 3
