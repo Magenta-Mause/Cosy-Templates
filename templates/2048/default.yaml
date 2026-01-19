@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=../../schema/template.schema.json
-name: '2048 - Test'
+name: '2048'
 description: Browser-based 2048 puzzle game server
 variables: []
 game_id: 2048
