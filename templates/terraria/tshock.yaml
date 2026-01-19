@@ -9,7 +9,7 @@ variables:
 game_id: 1226
 docker_image_name: ghcr.io/pryaxis/tshock
 docker_image_tag: latest
-docker_execution_command: '-world {{world_path}}'
+docker_execution_command: ['-world', '{{world_path}}']
 environment_variables: {}
 port_mapping:
   '7777/tcp': 7777
