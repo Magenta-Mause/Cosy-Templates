@@ -2,7 +2,7 @@
 name: '2048'
 description: Browser-based 2048 puzzle game server
 variables: []
-game_id: 2048
+game_id: 940
 docker_image_name: alexwhen/docker-2048
 docker_image_tag: latest
 environment_variables: {}
