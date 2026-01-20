@@ -14,7 +14,7 @@ environment_variables:
   version: '{{version}}'
   EULA: 'true'
 port_mapping:
-  '6432/tcp': 6432
+  '25565/tcp': 25565
 file_mounts:
   - /data
 resource_limit:
