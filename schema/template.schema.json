@@ -9,7 +9,7 @@
       "required": ["name", "type", "placeholder"],
       "additionalProperties": false,
       "properties": {
-        "name": {
+        "name": {s
           "type": "string",
           "minLength": 1,
           "description": "Display name for the variable"
@@ -38,11 +38,6 @@
             "type": "string"
           },
           "description": "Available options (required for 'select' type)"
-        },
-        "required": {
-          "type": "boolean",
-          "default": true,
-          "description": "Whether this variable must be provided"
         }
       }
     },
@@ -146,23 +141,6 @@
         "pattern": "^/.*$"
       },
       "description": "Paths inside the container to mount as persistent volumes"
-    },
-    "file_downloads": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["local_path", "web_path"],
-        "properties": {
-          "local_path": {
-            "type": "string",
-            "pattern": "^/.*$"
-          },
-          "web_path": {
-            "type": "string",
-            "format": "uri"
-          }
-        }
-      }
     },
     "resource_limit": {
       "$ref": "#/$defs/ResourceLimit",
