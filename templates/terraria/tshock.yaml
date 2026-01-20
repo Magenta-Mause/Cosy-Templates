@@ -6,6 +6,7 @@ variables:
     type: string
     placeholder: world_path
     default: /worlds/my_world.wld
+    example: '/worlds/my_world.wld'
 game_id: 1226
 docker_image_name: ghcr.io/pryaxis/tshock
 docker_image_tag: latest

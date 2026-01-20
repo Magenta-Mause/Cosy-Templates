@@ -5,20 +5,25 @@ variables:
   - name: Session Name
     type: string
     placeholder: session_name
+    example: 'My ARK Server'
   - name: Server Map
     type: string
     placeholder: server_map
     default: TheIsland
+    example: 'TheIsland'
   - name: Server Password
     type: string
     placeholder: server_password
+    example: 'secret123'
   - name: Admin Password
     type: string
     placeholder: admin_password
+    example: 'adminpass'
   - name: Max Players
     type: string
     placeholder: max_players
     default: "10"
+    example: '20'
   - name: Update On Start
     type: boolean
     placeholder: update_on_start

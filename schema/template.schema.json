@@ -38,6 +38,10 @@
             "type": "string"
           },
           "description": "Available options (required for 'select' type)"
+        },
+        "example": {
+          "type": "string",
+          "description": "Example value to display for free text inputs (e.g., '1.21.2' for a version field)"
         }
       }
     },

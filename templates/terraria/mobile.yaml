@@ -6,6 +6,7 @@ variables:
     type: string
     placeholder: world_name
     default: world
+    example: 'MyWorld'
   - name: World Size
     type: string
     placeholder: world_size
@@ -13,9 +14,11 @@ variables:
   - name: World Seed
     type: string
     placeholder: world_seed
+    example: '12345'
   - name: Server Password
     type: string
     placeholder: password
+    example: 'secret123'
   - name: Difficulty
     type: string
     placeholder: difficulty
@@ -24,6 +27,7 @@ variables:
     type: string
     placeholder: max_players
     default: "8"
+    example: '16'
 game_id: 1226
 docker_image_name: ghcr.io/meshi-team/terraria-server-mobile
 docker_image_tag: latest
