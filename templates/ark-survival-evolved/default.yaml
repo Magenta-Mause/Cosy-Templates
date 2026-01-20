@@ -43,7 +43,6 @@ port_mapping:
 file_mounts:
   - /app                # Server data
   - /home/steam/ARK-Backups  # Backups
-file_downloads: []
 resource_limit:
   memory: 6G
   cpu: 3
