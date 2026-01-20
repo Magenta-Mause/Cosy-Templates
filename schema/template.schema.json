@@ -9,7 +9,7 @@
       "required": ["name", "type", "placeholder"],
       "additionalProperties": false,
       "properties": {
-        "name": {s
+        "name": {
           "type": "string",
           "minLength": 1,
           "description": "Display name for the variable"
