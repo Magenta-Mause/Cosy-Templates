@@ -20,7 +20,7 @@ templates/counter-strike-2/competitive.yaml
 2. **Fill the required fields**:
 - `name`: Human-readable (e.g. "Minecraft Fabric")
 - `description`: What it provides
-- `game_id`: Short ID like "minecraft" or "[game_id]" placeholder
+- `game_id`: Get it from https://cosy-game-api.jannekeipert.de/games?query={search-string}
 - `docker_image_name` + `docker_image_tag`: Working Docker image
 - `port_mapping`: Standard ports for the game
 3. **Add variables**: Use `variables[]` for user inputs (version, memory, etc.).
@@ -33,7 +33,7 @@ Templates must pass the schema. Install a validator:
 ```bash
 # npm
 npm install -g validate-yaml
-validate-yaml --schema=schema/template.schema.json templates/minecraft/fabric.yaml
+validate-yaml --schema=schema/template.schema.json templates/{game-name}/{template-description}.yaml
 ```
 
 # Or use VS Code with yaml-language-server
