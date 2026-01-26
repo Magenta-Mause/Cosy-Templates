@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Magenta-Mause/Cosy-Templates/schema/template.schema.json",
   "title": "Game Server Template",
-  "description": "Schema for game server deployment templates",
+  "description": "Schema for game server deployment templates usable in cosy",
   "$defs": {
     "Variable": {
       "type": "object",
