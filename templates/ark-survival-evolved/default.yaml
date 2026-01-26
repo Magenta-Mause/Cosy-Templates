@@ -49,5 +49,5 @@ file_mounts:
   - /app                # Server data
   - /home/steam/ARK-Backups  # Backups
 resource_limit:
-  memory: 6G
+  memory: 6GiB
   cpu: 3

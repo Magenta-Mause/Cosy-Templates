@@ -10,5 +10,5 @@ port_mapping:
   '8080/tcp': 8080
 file_mounts: []
 resource_limit:
-  memory: 128M
+  memory: 128MiB
   cpu: 0.5

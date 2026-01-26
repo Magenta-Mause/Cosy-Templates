@@ -18,5 +18,5 @@ port_mapping:
 file_mounts:
   - /data
 resource_limit:
-  memory: 6G
+  memory: 6GiB
   cpu: 3

@@ -43,5 +43,5 @@ port_mapping:
 file_mounts:
   - /terraria-server/worlds
 resource_limit:
-  memory: 2G
+  memory: 2GiB
   cpu: 1

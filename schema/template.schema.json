@@ -51,8 +51,8 @@
       "properties": {
         "memory": {
           "type": "string",
-          "pattern": "^[0-9]+(\\.[0-9]+)?(B|K|M|G|T|KB|MB|GB|TB)?$",
-          "description": "Memory limit (e.g., '128M', '1G', '512MB')"
+          "pattern": "^[0-9]+(\\.[0-9]+)?(MiB|GiB)?$",
+          "description": "Memory limit (e.g., '128MiB', '1GiB', '512MiB')"
         },
         "cpu": {
           "type": "number",
