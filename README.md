@@ -13,14 +13,14 @@ A collection of validated Docker-based game server templates for easy deployment
 ## Quickstart
 
 1. Browse templates in [templates/](templates/)
-2. Use your deployment platform with the YAML config
+2. Use template directly inside your [Cosy-Instance](https://github.com/Magenta-Mause/Cosy)
 3. Fill variables (version, memory, etc.)
 
 **Example**: Minecraft Fabric
 
 ```
 templates/minecraft/fabric.yaml
-```
+``` 
 
 ## Template Format
 
@@ -60,10 +60,6 @@ All templates pass CI validation:
 - Docker image format
 
 CI runs on every PR: `.github/workflows/validate-templates.yml`
-
-## Deployment Platforms
-
-These templates work with:
 
 ## License
 
