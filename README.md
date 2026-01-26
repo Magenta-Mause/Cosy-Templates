@@ -42,10 +42,6 @@ docker_image_tag: latest
 
 **Full schema**: [schema/template.schema.json](schema/template.schema.json)
 
-## Why www.steamgriddb.com?
-
-Cosy is relying on the SteamGridDb API to resolve game information as this was the best and easiest to access API.
-
 ## Contributing
 
 - Add new templates: [CONTRIBUTING.md](CONTRIBUTING.md)
