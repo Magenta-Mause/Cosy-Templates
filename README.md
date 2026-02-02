@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://stratssync.com">
+    <a href="https://github.com/magenta-mause/cosy">
         <picture>
           <img src="https://raw.githubusercontent.com/Magenta-Mause/Cosy-Templates/refs/heads/main/assets/logo.gif" width="400"  alt="Cosy"/>
         </picture>
