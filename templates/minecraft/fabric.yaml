@@ -11,8 +11,10 @@ game_id: 38365
 docker_image_name: itzg/minecraft-server
 docker_image_tag: latest
 environment_variables:
-  version: '{{version}}'
+  VERSION: '{{version}}'
   EULA: 'true'
+  TYPE: 'FABRIC'
+  MODRINTH_PROJECTS: 'fabric-api'
 port_mapping:
   '25565/tcp': 25565
 file_mounts:
