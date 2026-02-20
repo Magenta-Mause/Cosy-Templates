@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft Fabric
+description: Minecraft Fabric Server with default fabric installation
+variables:
+  - name: Minecraft Version
+    type: string
+    regex: \d\.\d+\.\d+
+    placeholder: version
+    example: '1.21.2'
+game_id: 38365
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+environment_variables:
+  VERSION: '{{version}}'
+  EULA: 'true'
+  TYPE: 'FABRIC'
+  MODRINTH_PROJECTS: 'fabric-api \n cosy-integration-mod'
+port_mapping:
+  '25565/tcp': 25565
+file_mounts:
+  - /data
+resource_limit:
+  memory: 6GiB
+  cpu: 3
