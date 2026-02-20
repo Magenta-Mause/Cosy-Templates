@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema/template.schema.json
-name: Minecraft Fabric
-description: Minecraft Fabric Server with default fabric installation
+name: Minecraft Fabric + Cosy Custom Metric Integration
+description: Minecraft Fabric Server with fabric and cosy-integration-mod setup
 variables:
   - name: Minecraft Version
     type: string
