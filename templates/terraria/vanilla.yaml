@@ -3,7 +3,7 @@ name: Terraria Vanilla
 description: Vanilla Terraria Server (based on https://github.com/hexlo/terraria-server-docker)
 variables:
   - name: Difficulty
-    type: string
+    type: select
     placeholder: difficulty
     options: ["0", "1", "2", "3"]
   - name: Server Password
@@ -20,7 +20,7 @@ variables:
     placeholder: motd
     example: Johns Server - Join here :)
   - name: Language
-    type: string
+    type: select
     placeholder: language
     options: ["en/US", "de/DE", "it/IT", "fr/FR", "es/ES", "ru/RU", "zh/Hans", "pt/BR", "pl/PL"]
 game_id: 1226
