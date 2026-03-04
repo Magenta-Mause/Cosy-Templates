@@ -23,7 +23,7 @@ variables:
     type: string
     placeholder: server_description
     example: Join me on my Palworld adventures
-game_id: 1226
+game_id: 5286879
 docker_image_name: hexlo/terraria-server-docker
 docker_image_tag: latest
 environment_variables:
@@ -49,4 +49,5 @@ file_mounts:
 resource_limit:
   memory: 3GiB
   cpu: 1
+
 
