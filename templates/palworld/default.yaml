@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Palworld Default
+description: Default Palworld server (based on https://github.com/thijsvanloef/palworld-server-docker)
+variables:
+  - name: Max Players
+    type: string
+    placeholder: max_players
+    default: "8"
+    example: '16'
+  - name: Server Password
+    type: string
+    placeholder: password
+    example: 'secret123'
+  - name: Admin Password
+    type: string
+    placeholder: admin_password
+    example: 'secret234'
+  - name: Server Name
+    type: string
+    placeholder: server_name
+    example: My Palworld Server
+  - name: Server description
+    type: string
+    placeholder: server_description
+    example: Join me on my Palworld adventures
+game_id: 1226
+docker_image_name: hexlo/terraria-server-docker
+docker_image_tag: latest
+environment_variables:
+  PUID: 1000
+  PGID: 1000
+  PORT: 8211
+  PLAYERS: '{{player_count}}'
+  SERVER_PASSWORD: '{{SERVER_PASSWORD}}'
+  MULTITHREADING: true
+  REST_API_ENABLED: true
+  TZ: UTC
+  ADMIN_PASSWORD: '{{admin_password}}'
+  Language: '{{language}}'
+  SERVER_NAME: '{{server_name}}'
+  SERVER_DESCRIPTION: '{{server_description}}'
+  CROSSPLAY_PLATFORMS: '(Steam,Xbox,PS5,Mac)'
+port_mapping:
+  '8211/udp': 8211
+  '8212/tcp': 8212
+  '27015/udp': 27015
+file_mounts:
+  - /palworld
+resource_limit:
+  memory: 3GiB
+  cpu: 1
