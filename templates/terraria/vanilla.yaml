@@ -1,46 +1,42 @@
 # yaml-language-server: $schema=../../schema/template.schema.json
 name: Terraria Vanilla
-description: Official Terraria vanilla server (build from source or ghcr.io/meshi-team/terraria-server-vanilla)
+description: Vanilla Terraria Server (based on https://github.com/hexlo/terraria-server-docker)
 variables:
-  - name: World Name
-    type: string
-    placeholder: world_name
-    default: world
-    example: 'MyWorld'
-  - name: World Size
-    type: string
-    placeholder: world_size
-    options: ["1", "2", "3"]
-  - name: World Seed
-    type: string
-    placeholder: world_seed
-    example: '12345'
-  - name: Server Password
-    type: string
-    placeholder: password
-    example: 'secret123'
   - name: Difficulty
     type: string
     placeholder: difficulty
     options: ["0", "1", "2", "3"]
+  - name: Server Password
+    type: string
+    placeholder: password
+    example: 'secret123'
   - name: Max Players
     type: string
     placeholder: max_players
     default: "8"
     example: '16'
+  - name: Motto of the day
+    type: string
+    placeholder: motd
+    example: Johns Server - Join here :)
+  - name: Language
+    type: string
+    placeholder: language
+    options: ["en/US", "de/DE", "it/IT", "fr/FR", "es/ES", "ru/RU", "zh/Hans", "pt/BR", "pl/PL"]
 game_id: 1226
-docker_image_name: ghcr.io/meshi-team/terraria-server-vanilla
+docker_image_name: hexlo/terraria-server-docker
 docker_image_tag: latest
 environment_variables:
-  WORLD_SIZE: '{{world_size}}'
-  WORLD_SEED: '{{world_seed}}'
-  PASSWORD: '{{password}}'
-  DIFFICULTY: '{{difficulty}}'
-  MAX_PLAYERS: '{{max_players}}'
+  world: world.wld
+  password: '{{password}}'
+  difficulty: '{{difficulty}}'
+  maxplayers: '{{max_players}}'
+  motd: '{{motd}}'
+  Language: '{{language}}'
 port_mapping:
   '7777/tcp': 7777
 file_mounts:
-  - /terraria-server/worlds
+  - /root/.local/share/Terraria/Worlds
 resource_limit:
-  memory: 2GiB
+  memory: 3GiB
   cpu: 1
