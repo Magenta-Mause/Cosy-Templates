@@ -19,7 +19,7 @@ environment_variables:
   MODRINTH_MODPACK: '{{modpack}}'
   EULA: 'true'
   MEMORY: '{{memory}}G'
-  TYPEW: 'MODRINTH'
+  TYPE: 'MODRINTH'
 port_mapping:
   '25565/tcp': 25565
 file_mounts:
@@ -27,3 +27,4 @@ file_mounts:
 resource_limit:
   memory: 6GiB
   cpu: 3
+
