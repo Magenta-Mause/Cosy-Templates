@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft Modrinth Modpack
+description: Minecraft Fabric Server with Modrinth modpack
+variables:
+  - name: Modpack Link/ID
+    type: string
+    placeholder: modpack
+    example: 'cobblemon-fabric (https://github.com/itzg/docker-minecraft-server/blob/master/docs/types-and-platforms/mod-platforms/modrinth-modpacks.md#modpack-project)'
+  - name: Memory Allocation (in Gigabyte)
+    type: string
+    placeholder: memory
+    example: '4'
+    default: '6'
+game_id: 38365
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+environment_variables:
+  VERSION: 'LATEST' 
+  MODRINTH_MODPACK: '{{modpack}}'
+  EULA: 'true'
+  MEMORY: '{{memory}}G'
+port_mapping:
+  '25565/tcp': 25565
+file_mounts:
+  - /data
+resource_limit:
+  memory: 6GiB
+  cpu: 3
