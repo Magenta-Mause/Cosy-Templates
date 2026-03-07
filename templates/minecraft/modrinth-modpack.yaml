@@ -19,6 +19,7 @@ environment_variables:
   MODRINTH_MODPACK: '{{modpack}}'
   EULA: 'true'
   MEMORY: '{{memory}}G'
+  TYPEW: 'MODRINTH'
 port_mapping:
   '25565/tcp': 25565
 file_mounts:
