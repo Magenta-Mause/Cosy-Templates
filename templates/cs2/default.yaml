@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: CS2 Default
+description: CS2 Default template (based on https://github.com/joedwards32/CS2/)
+variables:
+  - name: Steam Server Connect Token
+    type: string
+    placeholder: srcds_token
+    example: "Check https://steamcommunity.com/dev/managegameservers to get token"
+game_id: 5363838
+docker_image_name: joedwards32/cs2
+docker_image_tag: latest
+environment_variables:
+  SRCDS_TOKEN: "{{srcds_token}}"
+port_mapping:
+  "27015/tcp": 27015
+  "27015/udp": 27015
+  "27020/tcp": 27020
+file_mounts:
+  - /home/steam/cs2-dedicated
+resource_limit:
+  memory: 3GiB
+  cpu: 2
