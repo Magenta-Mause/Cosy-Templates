@@ -152,7 +152,7 @@
     },
     "tags": {
       "type": "array",
-      "items": { "type": "string", "minLength": 1, "maxLength": 50 },
+      "items": { "type": "string", "minLength": 0, "maxLength": 50 },
       "description": "Categorization tags for filtering (e.g. 'fabric', 'modpack', 'cosy-integrated')"
     }
   }

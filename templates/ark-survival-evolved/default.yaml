@@ -35,7 +35,6 @@ variables:
     default: true
 tags:
   - survival
-  - dedicated
 game_id: 6511
 docker_image_name: hermsi/ark-server
 docker_image_tag: latest
