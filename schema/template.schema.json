@@ -149,6 +149,11 @@
     "resource_limit": {
       "$ref": "#/$defs/ResourceLimit",
       "description": "Optional CPU and memory limits for the container"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 50 },
+      "description": "Categorization tags for filtering (e.g. 'fabric', 'modpack', 'cosy-integrated')"
     }
   }
 }

@@ -23,6 +23,9 @@ variables:
     type: string
     placeholder: server_description
     example: Join me on my Palworld adventures
+tags:
+  - survival
+  - dedicated
 game_id: 5286879
 docker_image_name: hexlo/terraria-server-docker
 docker_image_tag: latest
