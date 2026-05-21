@@ -23,6 +23,9 @@ variables:
     type: select
     placeholder: language
     options: ["en/US", "de/DE", "it/IT", "fr/FR", "es/ES", "ru/RU", "zh/Hans", "pt/BR", "pl/PL"]
+tags:
+  - survival
+  - vanilla
 game_id: 1226
 docker_image_name: hexlo/terraria-server-docker
 docker_image_tag: latest

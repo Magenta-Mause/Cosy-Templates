@@ -6,6 +6,8 @@ variables:
     type: string
     placeholder: srcds_token
     example: "Check https://steamcommunity.com/dev/managegameservers to get token"
+tags:
+  - competitive
 game_id: 5363838
 docker_image_name: joedwards32/cs2
 docker_image_tag: latest

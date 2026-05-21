@@ -33,6 +33,8 @@ variables:
     type: boolean
     placeholder: backup_on_stop
     default: true
+tags:
+  - survival
 game_id: 6511
 docker_image_name: hermsi/ark-server
 docker_image_tag: latest

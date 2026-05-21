@@ -12,6 +12,9 @@ variables:
     placeholder: memory
     example: '4'
     default: '6'
+tags:
+  - fabric
+  - cosy-integrated
 game_id: 38365
 docker_image_name: itzg/minecraft-server
 docker_image_tag: latest
