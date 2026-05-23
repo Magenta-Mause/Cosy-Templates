@@ -11,7 +11,7 @@ variables:
     type: select
     placeholder: server_map
     default: TheIsland
-    options: ["TheIsland", "Ragnarok", "TheCenter", "ScorechedEarth_P", "Aberration_P", "Extinction", "CrystalIsles", "Valguero_P", "Genesis", "CrystalIsles", "Gen2", "LostIsland", "Fjordur"]
+    options: ["TheIsland", "Ragnarok", "TheCenter", "ScorchedEarth_P", "Aberration_P", "Extinction", "CrystalIsles", "Valguero_P", "Genesis", "Gen2", "LostIsland", "Fjordur"]
     description: The map to load on the server
   - name: Server Password
     type: string
