@@ -5,7 +5,8 @@ variables:
   - name: Steam Server Connect Token
     type: string
     placeholder: srcds_token
-    example: "Check https://steamcommunity.com/dev/managegameservers to get token"
+    example: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    description: Steam Game Server Login Token (GSLT) required to list the server publicly on Steam. Get one at https://steamcommunity.com/dev/managegameservers
 tags:
   - competitive
 game_id: 5363838

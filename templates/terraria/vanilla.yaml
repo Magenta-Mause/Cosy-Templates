@@ -6,23 +6,28 @@ variables:
     type: select
     placeholder: difficulty
     options: ["0", "1", "2", "3"]
+    description: World difficulty (0 = Classic, 1 = Expert, 2 = Master, 3 = Journey)
   - name: Server Password
     type: string
     placeholder: password
     example: 'secret123'
+    description: Password required for players to join the server (leave empty for no password)
   - name: Max Players
     type: string
     placeholder: max_players
     default: "8"
     example: '16'
+    description: Maximum number of players allowed on the server at the same time
   - name: Motto of the day
     type: string
     placeholder: motd
     example: Johns Server - Join here :)
+    description: Message displayed to players when they join the server
   - name: Language
     type: select
     placeholder: language
     options: ["en/US", "de/DE", "it/IT", "fr/FR", "es/ES", "ru/RU", "zh/Hans", "pt/BR", "pl/PL"]
+    description: Server language
 tags:
   - survival
   - vanilla

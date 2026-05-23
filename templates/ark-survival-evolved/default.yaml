@@ -6,33 +6,39 @@ variables:
     type: string
     placeholder: session_name
     example: 'My ARK Server'
+    description: The name displayed in the server browser
   - name: Server Map
     type: select
     placeholder: server_map
     default: TheIsland
-    example: 'TheIsland'
     options: ["TheIsland", "Ragnarok", "TheCenter", "ScorechedEarth_P", "Aberration_P", "Extinction", "CrystalIsles", "Valguero_P", "Genesis", "CrystalIsles", "Gen2", "LostIsland", "Fjordur"]
+    description: The map to load on the server
   - name: Server Password
     type: string
     placeholder: server_password
     example: 'secret123'
+    description: Password required for players to join the server (leave empty for no password)
   - name: Admin Password
     type: string
     placeholder: admin_password
     example: 'adminpass'
+    description: Password for administrator access via the in-game console
   - name: Max Players
     type: string
     placeholder: max_players
     default: "10"
     example: '20'
+    description: Maximum number of players allowed on the server at the same time
   - name: Update On Start
     type: boolean
     placeholder: update_on_start
     default: true
+    description: Automatically update the server to the latest version on each start
   - name: Backup On Stop
     type: boolean
     placeholder: backup_on_stop
     default: true
+    description: Automatically create a backup of the world when the server stops
 tags:
   - survival
 game_id: 6511

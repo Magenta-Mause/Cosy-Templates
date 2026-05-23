@@ -7,22 +7,27 @@ variables:
     placeholder: max_players
     default: "8"
     example: '16'
+    description: Maximum number of players allowed on the server at the same time
   - name: Server Password
     type: string
     placeholder: password
     example: 'secret123'
+    description: Password required for players to join the server (leave empty for no password)
   - name: Admin Password
     type: string
     placeholder: admin_password
     example: 'secret234'
+    description: Password for administrator access
   - name: Server Name
     type: string
     placeholder: server_name
     example: My Palworld Server
+    description: The name displayed in the server browser
   - name: Server description
     type: string
     placeholder: server_description
     example: Join me on my Palworld adventures
+    description: Short description shown in the server browser
 tags:
   - survival
 game_id: 5286879

@@ -7,11 +7,13 @@ variables:
     regex: \d\.\d+\.\d+
     placeholder: version
     example: '1.21.2'
+    description: The Minecraft version to run (e.g. 1.21.2)
   - name: Memory Allocation (in Gigabyte)
     type: string
     placeholder: memory
     example: '4'
     default: '6'
+    description: Amount of RAM in gigabytes allocated to the server JVM
 tags:
   - fabric
 game_id: 38365
