@@ -5,12 +5,14 @@ variables:
   - name: Modpack Link/ID
     type: string
     placeholder: modpack
-    example: 'cobblemon-fabric (https://github.com/itzg/docker-minecraft-server/blob/master/docs/types-and-platforms/mod-platforms/modrinth-modpacks.md#modpack-project)'
+    example: 'cobblemon-fabric'
+    description: Modrinth modpack slug or URL to install on the server. See https://github.com/itzg/docker-minecraft-server/blob/master/docs/types-and-platforms/mod-platforms/modrinth-modpacks.md for supported formats
   - name: Memory Allocation (in Gigabyte)
     type: string
     placeholder: memory
     example: '4'
     default: '6'
+    description: Amount of RAM in gigabytes allocated to the server JVM
 tags:
   - fabric
   - modpack
