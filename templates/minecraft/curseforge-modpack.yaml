@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft CurseForge Modpack
+description: Minecraft server automatically installing a CurseForge modpack. Requires a free CurseForge API key.
+variables:
+  - name: Modpack Page URL
+    type: string
+    placeholder: modpack_url
+    example: 'https://www.curseforge.com/minecraft/modpacks/all-the-mods-10'
+    description: The CurseForge modpack page URL. See https://github.com/itzg/docker-minecraft-server/blob/master/docs/types-and-platforms/mod-platforms/auto-curseforge.md for all supported formats.
+  - name: CurseForge API Key
+    type: string
+    placeholder: cf_api_key
+    description: Your personal CurseForge API key, required to download modpack files. Get a free key at https://console.curseforge.com/
+  - name: Memory Allocation (in Gigabyte)
+    type: string
+    placeholder: memory
+    example: '8'
+    default: '8'
+    description: Amount of RAM in gigabytes allocated to the server JVM. Large modpacks typically need 6-12 GB.
+tags:
+  - curseforge
+  - modpack
+  - mods
+game_id: 38365
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+environment_variables:
+  EULA: 'true'
+  TYPE: 'AUTO_CURSEFORGE'
+  CF_PAGE_URL: '{{modpack_url}}'
+  CF_API_KEY: '{{cf_api_key}}'
+  MEMORY: '{{memory}}G'
+port_mapping:
+  '25565/tcp': 25565
+file_mounts:
+  - /data
+resource_limit:
+  memory: 8GiB
+  cpu: 4

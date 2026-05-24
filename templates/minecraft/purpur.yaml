@@ -1,35 +1,34 @@
 # yaml-language-server: $schema=../../schema/template.schema.json
-name: Minecraft Fabric + Cosy Custom Metric Integration
-description: Minecraft Fabric Server with fabric and cosy-integration-mod setup
+name: Minecraft Purpur
+description: Purpur server - a Paper fork with extra performance tuning and highly configurable gameplay options. Supports Bukkit/Spigot/Paper plugins.
 variables:
   - name: Minecraft Version
     type: string
     regex: \d\.\d+\.\d+
     placeholder: version
-    example: '1.21.2'
-    description: The Minecraft version to run
+    example: '1.21.5'
+    description: The Minecraft version to run. See https://purpurmc.org/downloads for supported versions.
   - name: Memory Allocation (in Gigabyte)
     type: string
     placeholder: memory
     example: '4'
-    default: '6'
+    default: '4'
     description: Amount of RAM in gigabytes allocated to the server JVM
 tags:
-  - fabric
-  - cosy-integrated
+  - purpur
+  - plugins
 game_id: 38365
 docker_image_name: itzg/minecraft-server
 docker_image_tag: latest
 environment_variables:
   VERSION: '{{version}}'
   EULA: 'true'
-  TYPE: 'FABRIC'
-  MODRINTH_PROJECTS: 'fabric-api\ncosy-integration-mod'
+  TYPE: 'PURPUR'
   MEMORY: '{{memory}}G'
 port_mapping:
   '25565/tcp': 25565
 file_mounts:
   - /data
 resource_limit:
-  memory: 6GiB
-  cpu: 3
+  memory: 4GiB
+  cpu: 2
