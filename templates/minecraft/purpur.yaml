@@ -7,7 +7,7 @@ variables:
     regex: \d\.\d+\.\d+
     placeholder: version
     example: '1.21.5'
-    description: The Minecraft version to run (e.g. 1.21.5). See https://purpurmc.org/downloads for supported versions.
+    description: The Minecraft version to run. See https://purpurmc.org/downloads for supported versions.
   - name: Memory Allocation (in Gigabyte)
     type: string
     placeholder: memory

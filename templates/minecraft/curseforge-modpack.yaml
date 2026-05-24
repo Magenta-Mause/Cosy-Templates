@@ -6,7 +6,7 @@ variables:
     type: string
     placeholder: modpack_url
     example: 'https://www.curseforge.com/minecraft/modpacks/all-the-mods-10'
-    description: The CurseForge modpack page URL (e.g. https://www.curseforge.com/minecraft/modpacks/all-the-mods-10). See https://github.com/itzg/docker-minecraft-server/blob/master/docs/types-and-platforms/mod-platforms/auto-curseforge.md for all supported formats.
+    description: The CurseForge modpack page URL. See https://github.com/itzg/docker-minecraft-server/blob/master/docs/types-and-platforms/mod-platforms/auto-curseforge.md for all supported formats.
   - name: CurseForge API Key
     type: string
     placeholder: cf_api_key
