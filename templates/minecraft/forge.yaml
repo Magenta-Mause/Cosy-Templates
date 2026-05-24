@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft Forge
+description: Minecraft Forge mod loader server - the classic modding platform. Place mods in /data/mods.
+variables:
+  - name: Minecraft Version
+    type: string
+    regex: \d\.\d+\.\d+
+    placeholder: version
+    example: '1.20.1'
+    description: The Minecraft version to run. Most Forge mods target 1.20.1 or 1.12.2. See https://files.minecraftforge.net/ for available versions.
+  - name: Memory Allocation (in Gigabyte)
+    type: string
+    placeholder: memory
+    example: '6'
+    default: '6'
+    description: Amount of RAM in gigabytes allocated to the server JVM. Modded servers typically need 4-8 GB depending on mod count.
+tags:
+  - forge
+  - mods
+game_id: 38365
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+environment_variables:
+  VERSION: '{{version}}'
+  EULA: 'true'
+  TYPE: 'FORGE'
+  MEMORY: '{{memory}}G'
+port_mapping:
+  '25565/tcp': 25565
+file_mounts:
+  - /data
+resource_limit:
+  memory: 6GiB
+  cpu: 3

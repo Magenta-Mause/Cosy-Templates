@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft NeoForge
+description: Minecraft NeoForge mod loader server - the modern successor to Forge for 1.20.2 and newer. Place mods in /data/mods.
+variables:
+  - name: Minecraft Version
+    type: string
+    regex: \d\.\d+\.\d+
+    placeholder: version
+    example: '1.21.5'
+    description: The Minecraft version to run. NeoForge supports 1.20.2 and newer only. See https://neoforged.net/ for supported versions.
+  - name: Memory Allocation (in Gigabyte)
+    type: string
+    placeholder: memory
+    example: '6'
+    default: '6'
+    description: Amount of RAM in gigabytes allocated to the server JVM. Modded servers typically need 4-8 GB depending on mod count.
+tags:
+  - neoforge
+  - mods
+game_id: 38365
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+environment_variables:
+  VERSION: '{{version}}'
+  EULA: 'true'
+  TYPE: 'NEOFORGE'
+  MEMORY: '{{memory}}G'
+port_mapping:
+  '25565/tcp': 25565
+file_mounts:
+  - /data
+resource_limit:
+  memory: 6GiB
+  cpu: 3

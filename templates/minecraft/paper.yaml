@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft Paper
+description: High-performance Paper server with Bukkit/Spigot plugin support. Drop-in vanilla replacement with significant performance improvements.
+variables:
+  - name: Minecraft Version
+    type: string
+    regex: \d\.\d+\.\d+
+    placeholder: version
+    example: '1.21.5'
+    description: The Minecraft version to run (e.g. 1.21.5). See https://papermc.io/downloads/paper for supported versions.
+  - name: Memory Allocation (in Gigabyte)
+    type: string
+    placeholder: memory
+    example: '4'
+    default: '4'
+    description: Amount of RAM in gigabytes allocated to the server JVM. Plugin servers typically benefit from at least 4 GB.
+tags:
+  - paper
+  - plugins
+game_id: 38365
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+environment_variables:
+  VERSION: '{{version}}'
+  EULA: 'true'
+  TYPE: 'PAPER'
+  MEMORY: '{{memory}}G'
+port_mapping:
+  '25565/tcp': 25565
+file_mounts:
+  - /data
+resource_limit:
+  memory: 4GiB
+  cpu: 2
