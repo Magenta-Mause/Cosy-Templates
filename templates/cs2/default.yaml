@@ -9,7 +9,7 @@ variables:
     description: Steam Game Server Login Token (GSLT) required to list the server publicly on Steam. Get one at https://steamcommunity.com/dev/managegameservers
 tags:
   - competitive
-game_id: 5363838
+game_id: cs2
 docker_image_name: joedwards32/cs2
 docker_image_tag: latest
 environment_variables:

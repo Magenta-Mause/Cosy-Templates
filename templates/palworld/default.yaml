@@ -30,7 +30,7 @@ variables:
     description: Short description shown in the server browser
 tags:
   - survival
-game_id: 5286879
+game_id: palworld
 docker_image_name: thijsvanloef/palworld-server-docker
 docker_image_tag: latest
 environment_variables:

@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../schema/game.schema.json
+name: Palworld
+logo_url: https://cdn2.steamgriddb.com/logo/adb65ff91470f0f4cab8c6bdfc8e7acc.png
+hero_url: https://cdn2.steamgriddb.com/hero/b12d24919e9df602efa0a0af9d99eb32.jpg
+external_game_id: 5286879

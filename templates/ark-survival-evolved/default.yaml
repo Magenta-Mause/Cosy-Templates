@@ -41,7 +41,7 @@ variables:
     description: Automatically create a backup of the world when the server stops
 tags:
   - survival
-game_id: 6511
+game_id: ark
 docker_image_name: hermsi/ark-server
 docker_image_tag: latest
 environment_variables:

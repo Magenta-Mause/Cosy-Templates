@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../schema/game.schema.json
+name: Counter-Strike 2
+logo_url: https://cdn2.steamgriddb.com/logo/3120e046c5cd9433ceb52aa1433810c8.png
+hero_url: https://cdn2.steamgriddb.com/hero/2b1ec9ecde3fcfa54840a68765c3f647.png
+external_game_id: 5363838

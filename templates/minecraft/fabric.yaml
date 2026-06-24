@@ -16,7 +16,7 @@ variables:
     description: Amount of RAM in gigabytes allocated to the server JVM
 tags:
   - fabric
-game_id: 38365
+game_id: minecraft
 docker_image_name: itzg/minecraft-server
 docker_image_tag: latest
 environment_variables:

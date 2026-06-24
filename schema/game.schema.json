@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Magenta-Mause/Cosy-Templates/schema/game.schema.json",
+  "title": "Game",
+  "description": "Schema for a game definition. The file name (its slug, without the .yaml extension) is the identifier templates reference via their game_id field.",
+  "type": "object",
+  "required": ["name"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "Human-readable display name of the game (e.g. 'Minecraft', 'Counter-Strike 2')"
+    },
+    "logo_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional URL to the game's logo artwork (SteamGridDB CDN URL carried over from the legacy game-service)"
+    },
+    "hero_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional URL to the game's hero/banner artwork (SteamGridDB CDN URL carried over from the legacy game-service)"
+    },
+    "external_game_id": {
+      "type": "integer",
+      "description": "Optional SteamGridDB numeric game id. Single source of truth for the legacy numeric id; used to resolve templates whose game_id is still numeric."
+    }
+  }
+}
