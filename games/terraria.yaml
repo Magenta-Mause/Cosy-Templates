@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=../schema/game.schema.json
 name: Terraria
-logo_url: https://cdn2.steamgriddb.com/logo/af922fd52975aee0083fb8e0ba9c1d64.png
+logo_url: https://cdn2.steamgriddb.com/icon/c8157144d45faf12c01a459170b2333a/32/256x256.png
 hero_url: https://cdn2.steamgriddb.com/hero/32e8e6c03f3fa46eb672dc5680bff7da.png
 external_game_id: 1226
