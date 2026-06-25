@@ -54,7 +54,7 @@
       "additionalProperties": false,
       "properties": {
         "memory": {
-          "description": "Memory limit (e.g., '128MiB', '1GiB', '512MiB'). May be a {{var}} placeholder string.",
+          "description": "Memory limit. Either a concrete value (e.g. '128MiB', '1GiB', '512MiB') or any string containing a {{var}} placeholder (e.g. '{{memory}}', '{{memory}}GiB'). When a placeholder is used, the template author is responsible for documenting the expected value in the variable config; the resolved value is validated at runtime.",
           "oneOf": [
             {
               "type": "string",
@@ -62,7 +62,7 @@
             },
             {
               "type": "string",
-              "pattern": "\\{\\{[a-z_][a-z0-9_]*\\}\\}"
+              "pattern": "^.*\\{\\{[a-z_][a-z0-9_]*\\}\\}.*$"
             }
           ]
         },
