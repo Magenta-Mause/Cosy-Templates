@@ -32,15 +32,55 @@ description: Minecraft Fabric Server with default fabric installation
 variables:
   - name: Minecraft Version
     type: string
-    regex: \d\.\d+\.\d
+    regex: \d\.\d+\.\d+
     placeholder: version
-game_id: '[steam_grid_db_game_id]' # This id comes from the https://www.steamgriddb.com/
+    example: '1.21.5'
+game_id: minecraft          # slug from games/minecraft.yaml
 docker_image_name: itzg/minecraft-server
 docker_image_tag: latest
-# ... port_mapping, environment_variables, etc.
+environment_variables:
+  VERSION: '{{version}}'
+  EULA: 'true'
+port_mapping:
+  '25565/tcp': 25565
+file_mounts:
+  - /data                   # cosy-managed persistent volume
+resource_limit:
+  memory: 4GiB
+  cpu: 2
 ```
 
 **Full schema**: [schema/template.schema.json](schema/template.schema.json)
+
+## Games directory
+
+Every template's `game_id` references a slug — the filename (without `.yaml`) of an entry under [`games/`](games/). Each game file carries the display name and artwork URLs used in the Cosy UI:
+
+```yaml
+# games/minecraft.yaml
+name: Minecraft
+logo_url: https://cdn2.steamgriddb.com/logo/...
+hero_url: https://cdn2.steamgriddb.com/hero/...
+external_game_id: 38365    # legacy SteamGridDB id; omit for new games
+```
+
+When adding a template for a game that isn't listed yet, add a matching `games/{slug}.yaml` in the same PR.
+
+## Advanced fields
+
+Templates may also include:
+
+- **`annotations`** — Docker container labels applied at launch (all users). Values may contain `{{var}}` placeholders.
+- **`host_mounts`** — direct host-path bind mounts (`host_path → container_path`, optional `read_only`). Enforced admin-only at runtime.
+
+```yaml
+annotations:
+  traefik.enable: 'true'
+host_mounts:
+  - host_path: /var/run/docker.sock
+    container_path: /var/run/docker.sock
+    read_only: true
+```
 
 ## Contributing
 

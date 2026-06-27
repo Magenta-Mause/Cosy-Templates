@@ -16,9 +16,10 @@
 - [ ] The template file is placed at `templates/{game-name}/{template-description}.yaml`.
 - [ ] The template passes schema validation (`template.schema.json`) locally or in CI.
 - [ ] `name`, `description`, `game_id`, `docker_image_name`, and `docker_image_tag` are set.
+- [ ] `game_id` is a slug matching an existing `games/{slug}.yaml` — or a new `games/{slug}.yaml` is included in this PR.
 - [ ] All ports in `port_mapping` are valid (1–65535) and documented if non-standard.
 - [ ] Environment variables are documented or obvious (e.g. `version`, `MEMORY`, etc.).
-- [ ] `file_downloads` URLs are reachable and use versions/placeholders correctly.
+- [ ] `file_mounts` paths are absolute and point to the correct persistent-data directories.
 
 ## Testing
 
