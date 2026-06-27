@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../schema/game.schema.json
+name: "ARK: Survival Evolved"
+logo_url: https://cdn2.steamgriddb.com/icon/3ec0e2c7f4536e7ce9e9ce183b1de9e8/32/256x256.png
+hero_url: https://cdn2.steamgriddb.com/hero/5c469784eafc2ded9338dedda197db25.png
+external_game_id: 6511

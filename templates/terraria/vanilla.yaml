@@ -31,7 +31,7 @@ variables:
 tags:
   - survival
   - vanilla
-game_id: 1226
+game_id: terraria
 docker_image_name: hexlo/terraria-server-docker
 docker_image_tag: latest
 environment_variables:

@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../schema/game.schema.json
+name: Minecraft
+logo_url: https://cdn2.steamgriddb.com/icon/add7a048049671970976f3e18f21ade3/32/256x256.png
+hero_url: https://cdn2.steamgriddb.com/hero/ecd812da02543c0269cfc2c56ab3c3c0.png
+external_game_id: 38365

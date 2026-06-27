@@ -12,4 +12,9 @@ jobs:
         with:
           file: 'templates/**/*.yaml'
           schema: 'schema/template.schema.json'
+      - name: Validate game definitions
+        uses: cardinalby/schema-validator-action@v3
+        with:
+          file: 'games/**/*.yaml'
+          schema: 'schema/game.schema.json'
 

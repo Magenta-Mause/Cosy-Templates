@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Magenta-Mause/Cosy-Templates/schema/template.schema.json",
   "title": "Game Server Template",
-  "description": "Schema for game server deployment templates usable in cosy",
+  "description": "Schema for game server deployment templates usable in cosy. Fields may carry {{var}} placeholder strings, and host_mounts + annotations are supported.",
   "$defs": {
     "Variable": {
       "type": "object",
@@ -46,6 +46,10 @@
         "example": {
           "type": "string",
           "description": "Example value to display for free text inputs (e.g., '1.21.2' for a version field)"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Whether the variable must be provided by the user (no default accepted)"
         }
       }
     },
@@ -54,18 +58,55 @@
       "additionalProperties": false,
       "properties": {
         "memory": {
-          "type": "string",
-          "pattern": "^[0-9]+(\\.[0-9]+)?(MiB|GiB)?$",
-          "description": "Memory limit (e.g., '128MiB', '1GiB', '512MiB')"
+          "description": "Memory limit. Either a concrete value (e.g. '128MiB', '1GiB', '512MiB') or any string containing a {{var}} placeholder (e.g. '{{memory}}', '{{memory}}GiB'). When a placeholder is used, the template author is responsible for documenting the expected value in the variable config; the resolved value is validated at runtime.",
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]+(\\.[0-9]+)?(MiB|GiB)?$"
+            },
+            {
+              "type": "string",
+              "pattern": "^.*\\{\\{[a-z_][a-z0-9_]*\\}\\}.*$"
+            }
+          ]
         },
         "cpu": {
-          "type": "number",
-          "minimum": 0.01,
-          "maximum": 128,
-          "description": "CPU limit in cores (e.g., 0.5 = half core, 2 = two cores)"
+          "description": "CPU limit in cores (e.g., 0.5 = half core, 2 = two cores). May be a {{var}} placeholder string.",
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 128
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       },
       "description": "Container resource limits"
+    },
+    "HostMount": {
+      "type": "object",
+      "required": ["host_path", "container_path"],
+      "additionalProperties": false,
+      "properties": {
+        "host_path": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Absolute path on the Docker host to bind mount (e.g. '/var/run/docker.sock'). May contain {{var}} placeholders."
+        },
+        "container_path": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Absolute path inside the container where the host path is mounted. May contain {{var}} placeholders."
+        },
+        "read_only": {
+          "type": "boolean",
+          "description": "Whether the bind mount is read-only. Defaults to true when omitted."
+        }
+      },
+      "description": "A direct host volume bind mount (admin/owner only at runtime)."
     }
   },
   "type": "object",
@@ -98,8 +139,8 @@
       }
     },
     "game_id": {
-      "type": "number",
-      "description": "Unique game identifier (SteamGridDB ID or slug)"
+      "type": ["string", "number"],
+      "description": "Game reference: a game slug (the games/*.yaml filename without extension) or a legacy SteamGridDB numeric id."
     },
     "docker_image_name": {
       "type": "string",
@@ -135,12 +176,11 @@
             "maximum": 65535
           },
           {
-            "type": "string",
-            "enum": ["tcp", "udp"]
+            "type": "string"
           }
         ]
       },
-      "description": "Port mappings as 'host_port': container_port or 'host_port/protocol': container_port"
+      "description": "Port mappings as 'host_port': container_port or 'host_port/protocol': container_port. Values may be integers or {{var}} placeholder strings."
     },
     "file_mounts": {
       "type": "array",
@@ -148,7 +188,21 @@
         "type": "string",
         "pattern": "^/.*$"
       },
-      "description": "Paths inside the container to mount as persistent volumes"
+      "description": "Paths inside the container to mount as cosy-managed persistent volumes"
+    },
+    "host_mounts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/HostMount"
+      },
+      "description": "Direct host volume bind mounts (explicit host_path -> container_path). Admin/owner only at runtime."
+    },
+    "annotations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Docker container labels applied at launch. Keys and values are strings; values may contain {{var}} placeholders. Keys starting with the reserved prefix 'cosy.' are stripped at runtime."
     },
     "resource_limit": {
       "$ref": "#/$defs/ResourceLimit",
