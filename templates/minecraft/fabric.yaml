@@ -30,5 +30,5 @@ port_mapping:
 file_mounts:
   - /data
 resource_limit:
-  memory: 6GiB
+  memory: '{{memory}}GiB'
   cpu: 3
