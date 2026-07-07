@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft CurseForge Modpack (MC-Router)
+description: Minecraft server automatically installing a CurseForge modpack (requires a free CurseForge API key), routed through the MC-Router proxy. Not published to a host port; players reach it via the hostname you set below. Requires the "MC-Router (Proxy)" server to be running.
+variables:
+  - name: Modpack Page URL
+    type: string
+    placeholder: modpack_url
+    example: 'https://www.curseforge.com/minecraft/modpacks/all-the-mods-10'
+    description: The CurseForge modpack page URL. See https://github.com/itzg/docker-minecraft-server/blob/master/docs/types-and-platforms/mod-platforms/auto-curseforge.md for all supported formats.
+  - name: CurseForge API Key
+    type: string
+    placeholder: cf_api_key
+    description: Your personal CurseForge API key, required to download modpack files. Get a free key at https://console.curseforge.com/
+  - name: Memory Allocation (in Gigabyte)
+    type: string
+    placeholder: memory
+    example: '8'
+    default: '8'
+    description: Amount of RAM in gigabytes allocated to the server JVM. Large modpacks typically need 6-12 GB.
+  - name: Router Hostname
+    type: string
+    regex: ^[A-Za-z0-9.-]+$
+    placeholder: hostname
+    example: 'smp.example.com'
+    description: The address players connect to. The MC-Router proxy forwards connections for this hostname to this server. Requires the "MC-Router (Proxy)" server to be running.
+tags:
+  - curseforge
+  - modpack
+  - mods
+  - mc-router
+game_id: minecraft
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+environment_variables:
+  EULA: 'true'
+  TYPE: 'AUTO_CURSEFORGE'
+  CF_PAGE_URL: '{{modpack_url}}'
+  CF_API_KEY: '{{cf_api_key}}'
+  MEMORY: '{{memory}}G'
+annotations:
+  mc-router.host: '{{hostname}}'
+file_mounts:
+  - /data
+resource_limit:
+  memory: '{{memory}}GiB'
+  cpu: 4

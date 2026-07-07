@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft Modrinth Modpack (MC-Router)
+description: Minecraft Fabric server with a Modrinth modpack, routed through the MC-Router proxy. Not published to a host port; players reach it via the hostname you set below. Requires the "MC-Router (Proxy)" server to be running.
+variables:
+  - name: Modpack Link/ID
+    type: string
+    placeholder: modpack
+    example: 'cobblemon-fabric'
+    description: Modrinth modpack slug or URL to install on the server. See https://github.com/itzg/docker-minecraft-server/blob/master/docs/types-and-platforms/mod-platforms/modrinth-modpacks.md for supported formats
+  - name: Memory Allocation (in Gigabyte)
+    type: string
+    placeholder: memory
+    example: '4'
+    default: '6'
+    description: Amount of RAM in gigabytes allocated to the server JVM
+  - name: Router Hostname
+    type: string
+    regex: ^[A-Za-z0-9.-]+$
+    placeholder: hostname
+    example: 'smp.example.com'
+    description: The address players connect to. The MC-Router proxy forwards connections for this hostname to this server. Requires the "MC-Router (Proxy)" server to be running.
+tags:
+  - fabric
+  - modpack
+  - mc-router
+game_id: minecraft
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+environment_variables:
+  VERSION: 'LATEST'
+  MODRINTH_MODPACK: '{{modpack}}'
+  EULA: 'true'
+  MEMORY: '{{memory}}G'
+  TYPE: 'MODRINTH'
+annotations:
+  mc-router.host: '{{hostname}}'
+file_mounts:
+  - /data
+resource_limit:
+  memory: '{{memory}}GiB'
+  cpu: 3
