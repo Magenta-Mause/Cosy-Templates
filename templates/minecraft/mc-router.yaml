@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: MC-Router (Proxy)
+description: >-
+  itzg/mc-router reverse proxy. A single Minecraft entrypoint on port 25565 that routes each
+  connection by the address the player typed to the matching backend server. Backends are
+  discovered automatically from the Docker `mc-router.host` label set by the "(MC-Router)"
+  Minecraft templates. Admin-only: mounts the Docker socket (read-only) to watch containers.
+tags:
+  - mc-router
+  - proxy
+game_id: minecraft
+docker_image_name: itzg/mc-router
+docker_image_tag: latest
+environment_variables:
+  # Poll the Docker API and auto-register any container carrying the `mc-router.host` label.
+  IN_DOCKER: 'true'
+port_mapping:
+  '25565/tcp': 25565
+host_mounts:
+  - host_path: /var/run/docker.sock
+    container_path: /var/run/docker.sock
+    read_only: true
+resource_limit:
+  memory: 512MiB
+  cpu: 1

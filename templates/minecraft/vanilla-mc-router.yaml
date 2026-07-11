@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../schema/template.schema.json
+name: Minecraft Vanilla (MC-Router)
+description: Plain vanilla Minecraft server routed through the MC-Router proxy. Not published to a host port; players reach it via the hostname you set below. Requires the "MC-Router (Proxy)" server to be running.
+variables:
+  - name: Minecraft Version
+    type: string
+    regex: \d\.\d+\.\d+
+    placeholder: version
+    example: '1.21.5'
+    description: The Minecraft version to run. See https://www.minecraft.net/en-us/article/minecraft-java-edition for the latest release.
+  - name: Memory Allocation (in Gigabyte)
+    type: string
+    placeholder: memory
+    example: '2'
+    default: '2'
+    description: Amount of RAM in gigabytes allocated to the server JVM
+  - name: Router Hostname
+    type: string
+    regex: ^[A-Za-z0-9.-]+$
+    placeholder: hostname
+    example: 'smp.example.com'
+    description: The address players connect to. The MC-Router proxy forwards connections for this hostname to this server. Requires the "MC-Router (Proxy)" server to be running.
+tags:
+  - vanilla
+  - mc-router
+game_id: minecraft
+docker_image_name: itzg/minecraft-server
+docker_image_tag: latest
+environment_variables:
+  VERSION: '{{version}}'
+  EULA: 'true'
+  TYPE: 'VANILLA'
+  MEMORY: '{{memory}}G'
+annotations:
+  mc-router.host: '{{hostname}}'
+file_mounts:
+  - /data
+resource_limit:
+  memory: '{{memory}}GiB'
+  cpu: 2
