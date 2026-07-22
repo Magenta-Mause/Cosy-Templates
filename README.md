@@ -32,7 +32,7 @@ description: Minecraft Fabric Server with default fabric installation
 variables:
   - name: Minecraft Version
     type: string
-    regex: \d\.\d+\.\d+
+    regex: \d+\.\d+(\.\d+)?
     placeholder: version
     example: '1.21.5'
 game_id: minecraft          # slug from games/minecraft.yaml
