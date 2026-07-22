@@ -4,7 +4,7 @@ description: Purpur server (a Paper fork with extra performance tuning and confi
 variables:
   - name: Minecraft Version
     type: string
-    regex: \d\.\d+\.\d+
+    regex: \d+\.\d+(\.\d+)?
     placeholder: version
     example: '1.21.5'
     description: The Minecraft version to run. See https://purpurmc.org/downloads for supported versions.

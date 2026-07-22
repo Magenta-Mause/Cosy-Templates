@@ -4,7 +4,7 @@ description: Minecraft Fabric Server with fabric and cosy-integration-mod setup
 variables:
   - name: Minecraft Version
     type: string
-    regex: \d\.\d+\.\d+
+    regex: \d+\.\d+(\.\d+)?
     placeholder: version
     example: '1.21.2'
     description: The Minecraft version to run
